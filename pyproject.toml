@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antdpy"
+version = "0.1.0"
+description = "Ant Design para Python: declare a UI em Python, renderize com React + Antd."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Talles Salmon", email = "tallessalmon@hotmail.com" }]
+keywords = ["antd", "ant design", "ui", "web", "fastapi", "react", "websocket"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: User Interfaces",
+]
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27", "websockets>=12"]
+
+[project.optional-dependencies]
+pandas = ["pandas"]
+dev = ["pytest", "pytest-asyncio", "httpx"]
+
+[project.urls]
+Homepage = "https://github.com/tallessalmon/antdpy"
+Repository = "https://github.com/tallessalmon/antdpy"
+Issues = "https://github.com/tallessalmon/antdpy/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+antdpy = ["static/**/*"]
